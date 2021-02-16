@@ -26,7 +26,7 @@ AFRAME.registerComponent("cursor-listener",{
     
     handleClickEvents: function(){
         this.el.addEventListener("click",evt=>{
-            const placesEl=document.querySelector("#places-container");
+            const placesContainer=document.querySelector("#places-container");
             const{state}=placesContainer.getAttribute("tour");
             if(state==="places-list"){
                 const id=this.el.getAttribute("id");
@@ -54,7 +54,7 @@ AFRAME.registerComponent("cursor-listener",{
 
             const {selectedItemId}=this.data
             if(selectedItemId){
-                const el=document.querySelector('#${selectedItemId}');
+                const el=document.querySelector(`#${selectedItemId}`);
                 const id=el.getAttribute("id");
                 if(id==selectedItemId){
                     el.setAttribute("material",{
